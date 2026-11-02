@@ -68,7 +68,9 @@ Parts on the receiver board that are magnetic and need to be replaced for MRI co
 | Optical receiver (SFP module) | Replace with a non-magnetic equivalent |
 | HDMI shroud | Replace with a non-magnetic equivalent |
 | USB shrouds | Desolder and remove. USB is not needed for this project. |
+| 5V DC connector | Desolder and hardwire the power leads directly to the board. |
 
 - [ ] Find a non-magnetic optical receiver
 - [ ] Find a non-magnetic HDMI connector/shroud
 - [ ] Desolder the USB connectors
+- [ ] Desolder the 5V DC connector and hardwire power in
