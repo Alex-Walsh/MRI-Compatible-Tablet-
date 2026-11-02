@@ -56,7 +56,7 @@ This log records hardware bring-up and testing done on the capstone project.
 Focus: **power**. Everything on the bench is currently running from a DC power supply, and that needs to change.
 
 - [ ] **Move to battery power.** Replace the bench power supply so the system runs without it.
-- [ ] **Identify which parts need replacement.** Review the existing hardware (displays, driver board, fiber transmitter and receiver) and decide what has to be swapped out to run on battery power.
+- [ ] **Identify which parts need replacement.** Review the existing hardware (displays, driver board, fiber transmitter and receiver) and decide what has to be swapped out with non ferro-magnetic alternatives.
 - [ ] **Find replacement parts.** Source the parts identified above.
 - [ ] **Disassemble Screen** Ask Dr.Pan for help with this.
 
