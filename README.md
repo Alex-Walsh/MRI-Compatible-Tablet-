@@ -51,6 +51,28 @@ This log records hardware bring-up and testing done on the capstone project.
 
 ---
 
+## Session: November 2, 2026
+
+**Date:** 2026-11-02
+
+### Low-voltage test: MRI-side fiber optic receiver
+
+Lowered the supply voltage to the fiber optic receiver to find the minimum input voltage at which it still works.
+
+| Vin (V) | Current (A) | Power (W) | Working? |
+|---------|-------------|-----------|----------|
+| 4.75 | 0.55 | 2.61 | Yes |
+| 4.5 | 0.56 | 2.52 | Yes |
+| 4.3 | 0.58 | 2.49 | Yes |
+| 4.1 | 0.59 | 2.42 | Yes |
+| 3.9 | 0.60 | 2.34 | Yes |
+| 3.8 | n/a | n/a | No |
+| 3.7 | n/a | n/a | No |
+
+**Result:** The receiver works down to **3.9 V** and stops working at 3.8 V. Current rises slightly as voltage drops (0.55 A to 0.60 A), while power drops slightly (about 2.6 W to 2.3 W). Power is calculated as Vin × current.
+
+---
+
 ## Next steps
 
 Focus: **power**. Everything on the bench is currently running from a DC power supply, and that needs to change.
