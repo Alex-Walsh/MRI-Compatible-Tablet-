@@ -85,17 +85,25 @@ Focus: **power**. Everything on the bench is currently running from a DC power s
 
 Parts on the receiver board that are magnetic and need to be replaced for MRI compatibility:
 
-| Part | Action |
-|------|--------|
-| Optical receiver (SFP module) | Replace with a non-magnetic equivalent |
-| HDMI shroud | Replace with a non-magnetic equivalent |
-| USB shrouds | Desolder and remove. USB is not needed for this project. |
-| 5V DC connector | Desolder and hardwire the power leads directly to the board. |
+| Part | Action | Status (Nov 10) |
+|------|--------|-----------------|
+| Optical receiver (SFP module) | Replace with a non-magnetic equivalent | Find replacement |
+| HDMI shroud | Replace with a non-magnetic equivalent | Found: Molex 2086581051 |
+| USB shrouds | Desolder and remove. USB is not needed for this project. | Cover removed and resoldered |
+| 5V DC connector | Desolder and hardwire the power leads directly to the board. | Hardwire |
+| L4 (4.7 µH) | Replace with a non-ferrite inductor | Desoldered; found Murata LQW2UAS4R7J00L (air core, 260 mA), see below |
+| L5 (6.8 µH) | Replace with a non-ferrite inductor | Desoldered; found Abracon AISC-1008-6R8J-T (ceramic core, 200 mA), see below |
+| Y1 | Replace with a non-magnetic equivalent | Desoldered; measure and find an equivalent |
+| SMD capacitors | Check termination plating for nickel | Check plating |
 
 - [ ] Find a non-magnetic optical receiver
-- [ ] Find a non-magnetic HDMI connector/shroud
-- [ ] Desolder the USB connectors
+- [x] Find a non-magnetic HDMI connector/shroud (Molex 2086581051; confirm with the bench magnet when it arrives)
+- [x] Remove the USB shrouds
 - [ ] Desolder the 5V DC connector and hardwire power in
+- [x] Desolder L4, L5 and Y1
+- [ ] Measure the original L4 and L5 (inductance and current) to confirm the replacements are big enough
+- [ ] Find a replacement for Y1
+- [ ] Check SMD capacitor plating
 
 ### Fiber optic receiver: inductor replacement options
 
@@ -112,7 +120,7 @@ Original L4: value and current rating to be measured.
 
 Notes:
 - **Option A** has a true air core, so it is non-magnetic, but it is only rated for 260 mA with up to 4 Ω of resistance. It suits a filter or low-current line, not a switching converter's main inductor. Its self-resonant frequency is 60 MHz.
-- **Option B** handles about four times the current with far lower resistance. DigiKey lists its core as ceramic; confirm it is non-magnetic with the bench magnet (T-01) before fitting it.
+- **Option B** handles about four times the current with far lower resistance, but 4.7 µH at 1.1 A in an 0806 part is not achievable without magnetic material, so it is probably a ferrite multilayer despite DigiKey's "ceramic" label. Treat it as suspect: check the datasheet and test it with the bench magnet (T-01). Option A is the current pick.
 - Choose between them once L4's original rating is known: if L4 carries more than about 200 mA, Option A is too small.
 
 #### L5
