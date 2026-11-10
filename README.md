@@ -114,3 +114,15 @@ Notes:
 - **Option A** has a true air core, so it is non-magnetic, but it is only rated for 260 mA with up to 4 Ω of resistance. It suits a filter or low-current line, not a switching converter's main inductor. Its self-resonant frequency is 60 MHz.
 - **Option B** handles about four times the current with far lower resistance. DigiKey lists its core as ceramic; confirm it is non-magnetic with the bench magnet (T-01) before fitting it.
 - Choose between them once L4's original rating is known: if L4 carries more than about 200 mA, Option A is too small.
+
+#### L5
+
+Original L5: value and current rating to be measured.
+
+| Option | Part (manufacturer) | Inductance | Core | Current rating | DCR (max) | Package | Price (CAD, qty 1) | Link |
+|--------|---------------------|------------|------|----------------|-----------|---------|--------------------|------|
+| A | AISC-1008-6R8J-T (Abracon) | 6.8 µH ±5% | Ceramic (wirewound), unshielded | 200 mA | 7.7 Ω | 1008 (2520 metric) | Check on DigiKey (about $0.33 each at 2,000) | [DigiKey](https://www.digikey.ca/short/wwn94nzb) |
+
+Notes:
+- At 200 mA and up to 7.7 Ω, this part suits a filter or low-current line only, not a switching converter's main inductor. Its self-resonant frequency is 40 MHz.
+- DigiKey lists the core as ceramic; confirm it is non-magnetic with the bench magnet (T-01) before fitting it.
