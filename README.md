@@ -96,3 +96,21 @@ Parts on the receiver board that are magnetic and need to be replaced for MRI co
 - [ ] Find a non-magnetic HDMI connector/shroud
 - [ ] Desolder the USB connectors
 - [ ] Desolder the 5V DC connector and hardwire power in
+
+### Fiber optic receiver: inductor replacement options
+
+Candidate non-ferrite replacements for the inductors on the receiver board. Measure each original inductor with the LCR meter after removal and check that the replacement's current rating covers the circuit it sits in.
+
+#### L4
+
+Original L4: value and current rating to be measured.
+
+| Option | Part (manufacturer) | Inductance | Core | Current rating | DCR (max) | Package | Price (CAD, qty 1) | Link |
+|--------|---------------------|------------|------|----------------|-----------|---------|--------------------|------|
+| A | LQW2UAS4R7J00L (Murata) | 4.7 µH ±5% | Air (wirewound), unshielded | 260 mA | 4 Ω | 1008 (2520 metric) | Check on DigiKey | [DigiKey](https://www.digikey.ca/short/81cn75m5) |
+| B | ASMPM-0806-4R7M-T (Abracon) | 4.7 µH ±20% | Ceramic (multilayer), unshielded | 1.1 A (Isat 1.3 A) | 360 mΩ | 0806 (2016 metric) | $0.85 | [DigiKey](https://www.digikey.ca/short/9n5dfhpf) |
+
+Notes:
+- **Option A** has a true air core, so it is non-magnetic, but it is only rated for 260 mA with up to 4 Ω of resistance. It suits a filter or low-current line, not a switching converter's main inductor. Its self-resonant frequency is 60 MHz.
+- **Option B** handles about four times the current with far lower resistance. DigiKey lists its core as ceramic; confirm it is non-magnetic with the bench magnet (T-01) before fitting it.
+- Choose between them once L4's original rating is known: if L4 carries more than about 200 mA, Option A is too small.
